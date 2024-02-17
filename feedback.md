@@ -35,3 +35,16 @@ Esse documento visa coletar feedbacks sobre o teste de desenvolvimento. Desde o 
 
 5 - Quais falhas você encontrou na estrutura do projeto?
 > Resposta
+> 
+> 
+> 
+> 
+> CREATE TABLE `backend-test`.`datasource_urls` (
+`id_datasource_urls` INT NOT NULL AUTO_INCREMENT,
+`codigo` VARCHAR(45) NULL,
+`url_datasource` VARCHAR(45) NULL,
+`last_access` DATE NULL,
+`last_update` DATE NULL,
+`status` INT NOT NULL,
+PRIMARY KEY (`id_datasource_urls`),
+INDEX `id_datasource_urls_index` (`id_datasource_urls` ASC) INVISIBLE);
