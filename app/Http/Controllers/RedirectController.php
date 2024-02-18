@@ -61,7 +61,6 @@ class RedirectController extends Controller
     }
     public function stats($codigo, Request $request, DatasourceUrl $datasourceUrl, RedirectLogs $redirectLogs) {
         $redirectStats = RedirectStats::query()->where(['redirect_stats.url_id' => Hashids::decode($codigo)[0]])->first();
-dd($redirectStats);
         return view('api.redirects', [
             'stats' => $redirectStats
         ]);
