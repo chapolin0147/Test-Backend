@@ -20,24 +20,25 @@
         <table id="table" class="table table-striped table-hover ">
             <thead>
             <tr>
-                <th>Código</th>
-                <th>Status</th>
-                <th>URL de destino</th>
-                <th>Último acesso</th>
-                <th>Data de criação</th>
-                <th>Data de atualização</th>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>URL</th>
+                <th>Criado em</th>
+                <th>Última Atualização</th>
                 <th>Ações</th>
             </tr>
             </thead>
             <tbody class="items">
+
             @foreach($datasources as $datasource)
                 <tr>
                     <td>{{$datasource->getCodigo()}}</td>
-                    <td><a class="disabled" href="{{route('r.redirect', $datasource->getCodigo())}}">{{$datasource->getName()}}</a></td>
-                    <td><a href="{{route('r.redirect', $datasource->getCodigo())}}">{{$datasource->getUrl()}}</a></td>
-                    <td>{{date('d/m/Y H:i:s', strtotime($datasource->last_access))}}</td>
+                    <td><a href="{{route('r.redirect', $datasource->getCodigo())}}">{{$datasource->getName()}}</a></td>
+                    <td><a href="{{route('r.redirect', $datasource->getCodigo() . '?params=' . $datasource->getUrl())}}" href="">{{$datasource->getUrl()}}</a></td>
                     <td>{{date('d/m/Y H:i:s', strtotime($datasource->created_at))}}</td>
                     <td>{{date('d/m/Y H:i:s', strtotime($datasource->updated_at))}}</td>
+                    <td><a href="{{route('api.stats', $datasource->getCodigo())}}">stats</a></td>
+                    <td>logs</td>
                     <td><a class="btn btn-primary" href="{{route('api.edit', $datasource->getCodigo())}}"><i class="bi bi-pencil-square"></i></a> |  <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#deleteModal" data-whatever="" href="{{route('api.delete', $datasource->getCodigo())}}"><i class="bi bi-trash"></i></a></td>
                 </tr>
             @endforeach

@@ -18,7 +18,6 @@ use App\Http\Controllers\RedirectController;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::prefix('api')->name('api.')->group(function () {
     Route::get('/redirects', [HomeController::class, 'index'])->name('index');
     Route::get('create', [HomeController::class, 'create'])->name('create');
@@ -26,8 +25,8 @@ Route::prefix('api')->name('api.')->group(function () {
     Route::post('store', [HomeController::class, 'store'])->name('store');
     Route::post('update', [HomeController::class, 'update'])->name('update');
     Route::get('delete/{redirect}', [HomeController::class, 'delete'])->name('delete');
-    Route::get('/{redirect}/stats', [HomeController::class, 'stats']);
-    Route::get('/{redirect}/logs', [HomeController::class, 'logs']);
+    Route::get('/redirects/{redirect}/stats', [RedirectController::class, 'stats'])->name('stats');
+    Route::get('/redirects/{redirect}/logs', [HomeController::class, 'logs']);
 });
 
 

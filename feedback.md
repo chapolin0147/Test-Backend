@@ -4,47 +4,34 @@ Esse documento visa coletar feedbacks sobre o teste de desenvolvimento. Desde o 
 ## Antes de Iniciar o Teste
 
 1 - Fale sobre suas primeiras impressões do Teste:
-> Resposta
+> Achei um teste bem interessante, com um conceito bom para trabalhar
 
 2 - Tempo estimado para o teste:
-> Resposta
+> 2 dias
 
 3 - Qual parte você no momento considera mais difícil?
-> Resposta
+> O inicio do projeto sempre, descobrir por onde começar é bem dificil.
 
 4 - Qual parte você no momento considera que levará mais tempo?
-> Resposta
+> A ligação entre os Controllers
 
 5 - Por onde você pretende começar?
-> Resposta
+> Pela criação do redirect
 
 
 ## Após o Teste
 
 1 - O que você achou do teste?
-> Resposta
+> Gostei
 
 2 - Levou mais ou menos tempo do que você esperava?
-> Resposta
+> Mais tempo.
 
 3 - Teve imprevistos? Quais?
-> Resposta
+> Apenas pessoais.
 
 4 - Existem pontos que você gostaria de ter melhorado?
-> Resposta
+> Sim, o final do projeto sinto que poderia ter feito melhor.
 
 5 - Quais falhas você encontrou na estrutura do projeto?
-> Resposta
-> 
-> 
-> 
-> 
-> CREATE TABLE `backend-test`.`datasource_urls` (
-`id_datasource_urls` INT NOT NULL AUTO_INCREMENT,
-`codigo` VARCHAR(45) NULL,
-`url_datasource` VARCHAR(45) NULL,
-`last_access` DATE NULL,
-`last_update` DATE NULL,
-`status` INT NOT NULL,
-PRIMARY KEY (`id_datasource_urls`),
-INDEX `id_datasource_urls_index` (`id_datasource_urls` ASC) INVISIBLE);
+> Res
