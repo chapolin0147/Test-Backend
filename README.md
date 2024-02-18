@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Payt - Teste Backend
 
 O objetivo do teste é avaliar seu conhecimento em Laravel e respeito às boas práticas de programação e organização de
@@ -195,3 +196,6 @@ Usando o PHPUnit, crie testes unitários e de integração para a API
   com o projeto inicial
 - Não esqueça de preencher o arquivo `feedback.md` com suas considerações finais
 
+=======
+# Test-Backend
+>>>>>>> 269e72436c4290af51df1b1344ccab3c7d718d58
