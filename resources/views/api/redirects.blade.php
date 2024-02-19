@@ -25,6 +25,8 @@
                 <th>URL</th>
                 <th>Criado em</th>
                 <th>Última Atualização</th>
+                <th>Stats</th>
+                <th>Logs</th>
                 <th>Ações</th>
             </tr>
             </thead>

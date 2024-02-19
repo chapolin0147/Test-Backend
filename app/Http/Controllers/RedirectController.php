@@ -19,7 +19,11 @@ class RedirectController extends Controller
         if ($request->query('params')) {
             $params = $request->query('params');
             $params = explode('?', $params);
-            $params = $params[1];
+            if(isset($params[1])) {
+                $params = $params[1];
+            } else {
+                $params = "" ;
+            }
         }
         $redirectLogs->setRequestIp($request->getClientIp());
         $redirectLogs->setUser($request->getUser());
@@ -32,7 +36,10 @@ class RedirectController extends Controller
 
         $redirectLogs->setIdUrl($datasources->getId());
         $redirectLogs->save();
-
+        DatasourceUrl::query()->where(['datasource_urls.id' => $redirectLogs->getIdUrl()])
+            ->update([
+                'last_access' => date('Y-m-d H:i:s'),
+            ]);
         $redirectStats = new RedirectStats();
 
         $datasource = RedirectStats::query()->where(['redirect_stats.url_id' => $redirectLogs->getIdUrl()])->first();
@@ -61,7 +68,7 @@ class RedirectController extends Controller
     }
     public function stats($codigo, Request $request, DatasourceUrl $datasourceUrl, RedirectLogs $redirectLogs) {
         $redirectStats = RedirectStats::query()->where(['redirect_stats.url_id' => Hashids::decode($codigo)[0]])->first();
-        return view('api.redirects', [
+        return view('api.stats', [
             'stats' => $redirectStats
         ]);
     }

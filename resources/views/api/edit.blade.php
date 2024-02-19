@@ -96,6 +96,14 @@ use App\Models\DatasourceUrl;
                 <span class="xml-value xml-ds-qty-items">{{$datasource['codigo']}}</span>
                 <span class="xml-tag">&lt;/codigo&gt;</span>
                 <br>
+                <span class="xml-tag" style="margin-left: 8ch">&lt;created_at&gt;</span>
+                <span class="xml-value xml-ds-qty-items">{{$datasource['created_at']}}</span>
+                <span class="xml-tag">&lt;/created_at&gt;</span>
+                <br>
+                <span class="xml-tag" style="margin-left: 8ch">&lt;updated_at&gt;</span>
+                <span class="xml-value xml-ds-qty-items">{{$datasource['updated_at']}}</span>
+                <span class="xml-tag">&lt;/updated_at&gt;</span>
+                <br>
                 <span class="xml-tag">&lt;/rss&gt;</span>
             </div>
         </div>
